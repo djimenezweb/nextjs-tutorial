@@ -19,12 +19,10 @@ const TicketList = async () => {
 };
 
 const getTickets = async () => {
-  try {
-    const response = await fetch('http://localhost:4000/tickets', { next: { revalidate: 0 } });
-    return response.json();
-  } catch (error) {
-    console.error(error);
-  }
+  // imitate delay
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  const response = await fetch('http://localhost:4000/tickets', { next: { revalidate: 0 } });
+  return response.json();
 };
 
 export default TicketList;
