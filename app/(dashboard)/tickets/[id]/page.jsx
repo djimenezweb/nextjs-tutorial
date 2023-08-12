@@ -2,20 +2,27 @@ import { notFound } from 'next/navigation';
 
 export const dynamicParams = true;
 
-export const generateStaticParams = async () => {
-  const response = await fetch('http://localhost:4000/tickets');
-  const tickets = await response.json();
-  return tickets.map(ticket => ({
-    id: ticket.id
-  }));
-};
-
 const getTicketById = async id => {
   const response = await fetch(`http://localhost:4000/tickets/${id}`, { next: { revalidate: 60 } });
   if (!response.ok) {
     notFound();
   }
   return response.json();
+};
+
+export const generateMetadata = async ({ params }) => {
+  const ticket = await getTicketById(params.id);
+  return {
+    title: `Helpdesk | ${ticket.title}`
+  };
+};
+
+export const generateStaticParams = async () => {
+  const response = await fetch('http://localhost:4000/tickets');
+  const tickets = await response.json();
+  return tickets.map(ticket => ({
+    id: ticket.id
+  }));
 };
 
 const TicketDetails = async ({ params }) => {
