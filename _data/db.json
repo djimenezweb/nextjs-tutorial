@@ -34,6 +34,13 @@
       "priority": "medium",
       "user_email": "test@test.com",
       "id": "DJFbJtA"
+    },
+    {
+      "title": "Testing POST Request",
+      "body": "This is the body",
+      "user_email": "hola@hola.com",
+      "priority": "high",
+      "id": "RKUmJTz"
     }
   ]
 }
