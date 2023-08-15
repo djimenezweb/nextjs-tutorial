@@ -1,4 +1,17 @@
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
+
+const getTickets = async () => {
+  const supabase = createServerComponentClient({ cookies });
+  const { data, error } = await supabase.from('Tickets').select();
+
+  if (error) {
+    console.log(error.message);
+  }
+
+  return data;
+};
 
 const TicketList = async () => {
   const tickets = await getTickets();
@@ -16,13 +29,6 @@ const TicketList = async () => {
       {tickets.length === 0 && <p className="text-center">There are no open tickets</p>}
     </>
   );
-};
-
-const getTickets = async () => {
-  // imitate delay
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  const response = await fetch('http://localhost:4000/tickets', { next: { revalidate: 0 } });
-  return response.json();
 };
 
 export default TicketList;

@@ -14,19 +14,27 @@ const CreateForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     setIsLoading(true);
+
     const ticket = {
       title,
       body,
-      priority,
-      user_email: 'test@test.com'
+      priority
     };
-    const response = await fetch('http://localhost:4000/tickets', {
+
+    const response = await fetch('http://localhost:3000/api/tickets', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(ticket)
     });
 
-    if (response.ok) {
+    const json = await response.json();
+
+    if (json.error) {
+      setIsLoading(false);
+      console.log(error.message);
+    }
+
+    if (json.data) {
       setIsLoading(false);
       router.refresh();
       router.push('/tickets');
