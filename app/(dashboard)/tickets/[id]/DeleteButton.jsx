@@ -10,7 +10,7 @@ const DeleteButton = ({ id }) => {
 
   const handleClick = async () => {
     setIsLoading(true);
-    const response = await fetch('http://localhost:3000/api/tickets/' + id, {
+    const response = await fetch('../../../api/tickets' + id, {
       method: 'DELETE'
     });
     const json = await response.json();
