@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 13
 
-## Getting Started
+In this course we've build a Helpdesk app with authentication with [Next.js 13](https://nextjs.org/) and [Supabase](https://supabase.com/).
+It was done following Shaun Pelling's [Next 13 Masterclass](https://netninja.dev/p/next-13-masterclass).
 
-First, run the development server:
+In this course I've learnt to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Create pages and routes
+- Create layouts and nested layouts
+- Create segments (dynamic routes)
+- Build client and server components
+- Fetch data from a JSON server and from Supabase
+- Revalidate data
+- Render static and dynamic pages
+- Create a loading page with Suspense
+- Handle API endpoints with GET, POST and DELETE functions
+- Add metadata with generateMetadata
+- Connect the app to Supabase
+- Create signup, login and logout functions
+- Create an email redirect callback
+- Protect routes to logged users only
+- Enable RLS policies in Supabase
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [next 13.4.13](https://www.npmjs.com/package/next)
+- [react 18.2.0](https://www.npmjs.com/package/react)
+- [react-dom 18.2.0](https://www.npmjs.com/package/react-dom)
+- [@supabase/supabase-js 2.32.0](https://www.npmjs.com/package/@supabase/supabase-js)
+- [@supabase/auth-helpers-nextjs 0.7.4](https://www.npmjs.com/package/@supabase/auth-helpers-nextjs)
+- [autoprefixer 10.4.14](https://www.npmjs.com/package/autoprefixer)
+- [eslint 8.46.0](https://www.npmjs.com/package/eslint)
+- [eslint-config-next 13.4.13](https://www.npmjs.com/package/eslint-config-next)
+- [json-server 0.17.3](https://www.npmjs.com/package/json-server)
+- [postcss 8.4.27](https://www.npmjs.com/package/postcss)
+- [react-icons 4.10.1](https://www.npmjs.com/package/react-icons)
+- [tailwindcss 3.3.3](https://www.npmjs.com/package/tailwindcss)
+- [encoding 0.1.13](https://www.npmjs.com/package/encoding)
